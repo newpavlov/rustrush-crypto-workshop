@@ -12,8 +12,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Decrypt file using AES128-CBC-PKCS7 (without any authentification!!!)
@@ -22,8 +24,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt PNG image using AES128-CBC and AES128-ECB and save result as
@@ -32,6 +36,7 @@ pub(crate) enum Cli {
     #[structopt(name = "image")]
     EncryptImage {
         /// Path to a PNG image
+        #[structopt(parse(from_os_str))]
         image: PathBuf,
     },
     /// Encrypt/decrypt file using AES128-CTR (without any authentification!!!)
@@ -40,8 +45,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CFB-HMAC
@@ -50,8 +57,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CFB-HMAC
@@ -60,8 +69,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CTR-PMAC
@@ -70,8 +81,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CTR-PMAC
@@ -80,8 +93,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CTR-PMAC
@@ -90,8 +105,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
     /// Encrypt file using AES128-CTR-PMAC
@@ -100,8 +117,10 @@ pub(crate) enum Cli {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
+        #[structopt(parse(from_os_str))]
         src: PathBuf,
         /// Path to output (plaintext) file
+        #[structopt(parse(from_os_str))]
         dst: PathBuf,
     },
 }
