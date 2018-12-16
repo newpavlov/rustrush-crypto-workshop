@@ -1,0 +1,22 @@
+[package]
+name = "rustrush-ciphers"
+version = "0.1.0"
+authors = ["newpavlov <newpavlov@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+aes = "0.3"
+block-modes = "0.2"
+ctr = "0.3"
+pbkdf2 = { version = "0.3", default-features = false }
+sha2 = "0.8"
+hmac = "0.7"
+pmac = "0.2"
+hkdf = "0.7"
+miscreant = "0.3"
+stream-cipher = "0.3"
+crypto-mac = "0.7"
+generic-array = "0.12"
+structopt = "0.2"
+structopt-derive = "0.2"
+png = "0.13"

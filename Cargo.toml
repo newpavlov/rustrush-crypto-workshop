@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "ciphers",
+    "hash",
+    "pwhash",
+]

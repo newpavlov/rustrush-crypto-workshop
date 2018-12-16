@@ -1,0 +1,14 @@
+[package]
+name = "rustrush-hash"
+version = "0.1.0"
+authors = ["newpavlov <newpavlov@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+digest = "0.8"
+sha2 = "0.8"
+sha3 = "0.8"
+blake2 = "0.8"
+structopt = "0.2"
+structopt-derive = "0.2"
+hex = "0.3"
