@@ -8,6 +8,7 @@ edition = "2018"
 aes = "0.3"
 block-modes = "0.2"
 ctr = "0.3"
+cfb-mode = "0.3"
 pbkdf2 = { version = "0.3", default-features = false }
 sha2 = "0.8"
 hmac = "0.7"

@@ -1,9 +1,12 @@
 # [RustRush](https://rustrush.ru/):  Applied pure-Rust cryptography workshop
 
+[Presentation](https://docs.google.com/presentation/d/13ccjfT_4LELv8FY7v692XVDEx2fC-0pyyA1N0U2isyI/edit?usp=sharing)
+
 Your task is to fill TODOs in the master branch for crates in the following
 order: hash, pwhash, ciphers. Inside each crate follow order of sub-commands
 in `cli.rs` files.
 
+Solutions will be published after workshop in the `solution` branch.
 
 ## License
 

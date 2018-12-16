@@ -1,12 +1,12 @@
 //! #Examples
 //! ```sh
-//! rustrush-pwhash pbkdf2 aGVsbG8gd29ybGQ= my_password
-//! xHI7YUlzLnmPUt9entwsYWIGwZvhWZi5D5SMBffckA0=
+//! rustrush-pwhash pbkdf2 my_salt my_password
+//! ceQDgNQEkik+bmUXyPZUsuvP0xTJaAcWSJvRR4Ryb2I=
 //! ```
 //!
 //! ```sh
-//! rustrush-pwhash argon2 random_salt my_password
-//! xWodifxnj+eIT2iTCll6ZkYHd7ly4JAxZZ5FV3asfHw=1
+//! rustrush-pwhash argon2 my_salt my_password
+//! 0ebFEUWTY+Y+FaTeA/jbIP4Ofc83lnlk76Bol+CkPk8=
 //! ```
 use structopt::StructOpt;
 use hmac::Hmac;
@@ -33,8 +33,7 @@ fn main() {
     let opt = cli::Cli::from_args();
     let hash = match &opt {
         Cli::Pbkdf2 { salt, password, iterations, length } => {
-            let salt = base64::decode(salt).unwrap();
-            run_pbkdf2(password, &salt, *iterations, *length)
+            run_pbkdf2(password, salt.as_bytes(), *iterations, *length)
         },
         Cli::Argon2 { password, salt } => {
             run_argon2(password, salt)

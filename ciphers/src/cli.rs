@@ -44,9 +44,9 @@ pub(crate) enum Cli {
         /// Path to output (plaintext) file
         dst: PathBuf,
     },
-    /// Encrypt file using AES128-CTR-HMAC
-    #[structopt(name = "aes128_ctr_hmac_encrypt")]
-    AesCtrHmacEncrypt {
+    /// Encrypt file using AES128-CFB-HMAC
+    #[structopt(name = "aes128_cfb_hmac_encrypt")]
+    AesCfbHmacEncrypt {
         /// Password
         password: String,
         /// Path to input (ciphertext) file
@@ -54,9 +54,9 @@ pub(crate) enum Cli {
         /// Path to output (plaintext) file
         dst: PathBuf,
     },
-    /// Encrypt file using AES128-CTR-HMAC
-    #[structopt(name = "aes128_ctr_hmac_decrypt")]
-    AesCtrHmacDecrypt {
+    /// Encrypt file using AES128-CFB-HMAC
+    #[structopt(name = "aes128_cfb_hmac_decrypt")]
+    AesCfbHmacDecrypt {
         /// Password
         password: String,
         /// Path to input (ciphertext) file

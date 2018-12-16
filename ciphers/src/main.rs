@@ -4,7 +4,8 @@ use generic_array::{GenericArray, typenum::U16};
 use block_modes::{Ecb, Cbc, BlockMode, BlockModeIv};
 use block_modes::block_padding::Pkcs7;
 use ctr::Ctr128;
-use ctr::stream_cipher::{NewStreamCipher, SyncStreamCipher};
+use cfb_mode::Cfb;
+use stream_cipher::{NewStreamCipher, SyncStreamCipher};
 use hmac::Hmac;
 use pmac::Pmac;
 use sha2::Sha256;
@@ -114,15 +115,15 @@ fn main() -> io::Result<()> {
         Cli::EncryptImage { image } => encrypt_image(image),
         Cli::Ctr { password, src, dst } =>
             ctr_encrypt_decrypt_file(password, src, dst),
-        Cli::AesCtrHmacEncrypt { password, src, dst } => {
+        Cli::AesCfbHmacEncrypt { password, src, dst } => {
             let master_key = derive_master_key(password);
-            etm::etm_encrypt::<Ctr128<Aes128>, Hmac<Sha256>>(
+            etm::etm_encrypt::<Cfb<Aes128>, Hmac<Sha256>>(
                 &master_key, src, dst
             )
         },
-        Cli::AesCtrHmacDecrypt { password, src, dst } => {
+        Cli::AesCfbHmacDecrypt { password, src, dst } => {
             let master_key = derive_master_key(password);
-            etm::etm_decrypt::<Ctr128<Aes128>, Hmac<Sha256>>(
+            etm::etm_decrypt::<Cfb<Aes128>, Hmac<Sha256>>(
                 &master_key, src, dst
             )
         },
