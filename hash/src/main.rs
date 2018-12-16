@@ -36,7 +36,7 @@
 //! ```
 //!
 //! ```sh
-//! $ rustrush-hash shake256 5 src/*
+//! $ rustrush-hash shake256 --length 5 src/*
 //! ../artwork/rust-logo-128x128-blk.png    570563a662
 //! ```
 use std::path::{PathBuf, Path};
