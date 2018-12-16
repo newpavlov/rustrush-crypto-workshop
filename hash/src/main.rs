@@ -3,34 +3,41 @@
 //!
 //! # Examples
 //! ```sh
-//! $ rustrush-hashes sha256 ../*
-//! ../Cargo.lock   b94363eab7f77787553a6e4f0d4d850b3568499bc8b82e96d6862ebb9865e5a1
-//! ../Cargo.toml   221ee6c6b68ce462571e50d0f5b86bb203ff3325e9a493004161727388759359
-//! ../hashes   Is a directory (os error 21)
-//! ../target   Is a directory (os error 21)
+//! $ ../target/release/rustrush-hash sha256 sha256 ../artwork/*
+//! ../artwork/rust-logo-128x128-blk.png    e144e4943ffbeabb97facc3e505dafba2199e27ae1b9bbd57ec65ea3f271cca7
+//! ../artwork/rust-logo-128x128-blk-v2.png a3b727c6ff3ff9014b01a9ac0e721b027344a080ca7dc1107533b4c63a369af1
+//! ../artwork/rust-logo-128x128.png    be51c2df3133a6e154a0d290adc50d0b6d31f872d80afe8262ac7d280f76363d
+//! ../artwork/rust-logo-16x16-blk.png  09e2fee65c3fd07deae4c4253bea484bbe449de7313e32e152d382b31220dee6
+//! ../artwork/rust-logo-16x16.png  d811884b5b308621d49441ff57f8d05b43c3c672b296fe898ee30bdc8026f587
+//! ../artwork/rust-logo-256x256-blk.png    73eb37d7c8e591ddf6962a10555b58c6926022392269e43ee5d5715397055601
+//! ../artwork/rust-logo-256x256.png    3590e5ac1e6ed21915045f7fb6670a4d47558da014c80bd69cb2c9bb548ad10c
+//! ../artwork/rust-logo-32x32-blk.png  0f47094c39fd6e4d0505709213c510437967d82afbaa30e78e3ab6586192210a
+//! ../artwork/rust-logo-32x32.png  267c0c1bf905fd46fac97f8d8f590c006696af7d093757699230a35822995675
+//! ../artwork/rust-logo-512x512-blk.png    18968384b4ab73ea582ae44c81bc63351ad48bfd0ab56a156760c48204473496
+//! ../artwork/rust-logo-512x512.png    38c08733444d8673b66e1e9e67420b462dd0e5567bea18d84da7b11d1c8cf118
+//! ../artwork/rust-logo-64x64-blk.png  e761ad5a4ff91d9d1dcdf60d5c9cfe175421b83dd1faad93558870e99e6577bf
+//! ../artwork/rust-logo-64x64.png  5a7a86bd5a0ec0e65f865dd5a9b2461b21106f5161f57f044c6f348f5a2513b2
+//! ../artwork/rust-logo-blk.svg    0ce17af81557923b7097065a579a8319c0719d6545c665f0add9ac0124354265
 //! ```
 //!
 //! ```
-//! $ echo "hello!" | ../target/release/rustrush-hashes sha256
+//! $ echo "hello!" | ../target/release/rustrush-hash sha256
 //! -   c8a31cb076b21999bd2cdcfa5f446a7a6644de88037087112fa18bd90cc13984
 //! ```
 //!
 //! ```sh
-//! $rustrush-hashes blake2s src/*
-//! src/cli.rs  cff1c6a8d3ee184df95a6c67c853d3b722353fc7b8ed17a31899cc2128cf8c93
-//! src/main.rs d93959320b3fc1e778fa43bfae0c6eba5c7993ec3e018eb03d34705710fe7292
+//! $ ../target/release/rustrush-hash blake2s ../artwork/rust-logo-128x128-blk.png
+//! ../artwork/rust-logo-128x128-blk.png    2d811c5233189b936efbf12ac75dcc124c09ca9b75cd3ca2d711af59e8f293ba
 //! ```
 //!
 //! ```sh
-//! $ rustrush-hashes var_blake2s 5 src/*
-//! src/cli.rs  758b18db3a
-//! src/main.rs 0877bb5e65
+//! $ rustrush-hash var_blake2s --length 5 ../artwork/rust-logo-128x128-blk.png
+//! ../artwork/rust-logo-128x128-blk.png    9bfec12802
 //! ```
 //!
 //! ```sh
-//! $ rustrush-hashes shake256 5 src/*
-//! src/cli.rs  2f71d5e195
-//! src/main.rs 70db9c2cae
+//! $ rustrush-hash shake256 5 src/*
+//! ../artwork/rust-logo-128x128-blk.png    570563a662
 //! ```
 use std::path::{PathBuf, Path};
 use std::io;

@@ -77,6 +77,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "base64"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "bitflags"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -159,6 +167,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "cc"
 version = "1.0.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "cfb-mode"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "block-cipher-trait 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "stream-cipher 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "clap"
@@ -456,6 +473,7 @@ version = "0.1.0"
 dependencies = [
  "aes 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "block-modes 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cfb-mode 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "crypto-mac 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "ctr 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "generic-array 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -489,6 +507,7 @@ name = "rustrush-pwhash"
 version = "0.1.0"
 dependencies = [
  "argon2rs 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "base64 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "hmac 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pbkdf2 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "sha2 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -649,6 +668,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum argon2rs 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "3f67b0b6a86dae6e67ff4ca2b6201396074996379fba2b92ff649126f37cb392"
 "checksum arrayvec 0.4.8 (registry+https://github.com/rust-lang/crates.io-index)" = "f405cc4c21cd8b784f6c8fc2adf9bc00f59558f0049b5ec21517f875963040cc"
 "checksum atty 0.2.11 (registry+https://github.com/rust-lang/crates.io-index)" = "9a7d5b8723950951411ee34d271d99dddcc2035a16ab25310ea2c8cfd4369652"
+"checksum base64 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "621fc7ecb8008f86d7fb9b95356cd692ce9514b80a86d85b397f32a22da7b9e2"
 "checksum bitflags 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "228047a76f468627ca71776ecdebd732a3423081fcf5125585bcd7c49886ce12"
 "checksum blake2 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "91721a6330935673395a0607df4d49a9cb90ae12d259f1b3e0a3f6e1d486872e"
 "checksum blake2-rfc 0.2.18 (registry+https://github.com/rust-lang/crates.io-index)" = "5d6d530bdd2d52966a6d03b7a964add7ae1a288d25214066fd4b600f0f796400"
@@ -660,6 +680,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum byte-tools 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "980479e6fde23246dfb54d47580d66b4e99202e7579c5eaa9fe10ecb5ebd2182"
 "checksum byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "94f88df23a25417badc922ab0f5716cc1330e87f71ddd9203b3a3ccd9cedf75d"
 "checksum cc 1.0.26 (registry+https://github.com/rust-lang/crates.io-index)" = "389803e36973d242e7fecb092b2de44a3d35ac62524b3b9339e51d577d668e02"
+"checksum cfb-mode 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "e98d7199ab849e1976ef64f730762d9481dbef4513a5fb890ab42dff301f522c"
 "checksum clap 2.32.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b957d88f4b6a63b9d70d5f454ac8011819c6efa7727858f458ab71c756ce2d3e"
 "checksum clear_on_drop 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "97276801e127ffb46b66ce23f35cc96bd454fa311294bced4bbace7baa8b1d17"
 "checksum cmac 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "44f175b5f76aa82ebe4c7e85ef95b23e9293c5618db28461cb10ee929e0f6e2f"
